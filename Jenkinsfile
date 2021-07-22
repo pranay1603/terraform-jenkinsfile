@@ -2,6 +2,7 @@ pipeline {
     agent{
        docker{
            image "pranay1603/terraform-k8s-ansible"
+           args "--user root"
        }
        }
     environment{

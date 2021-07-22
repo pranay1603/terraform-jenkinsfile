@@ -14,6 +14,7 @@ stages{
         steps{
                  git "https://github.com/pranay1603/terraform-k8s.git"
                  sh "chmod 400 Nvirginiakey"
+                 sh "whoami"
                  sh "terraform init"
                  sh "terraform apply -auto-approve"
             }

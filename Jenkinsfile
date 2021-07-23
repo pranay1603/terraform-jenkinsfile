@@ -10,7 +10,7 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials("AWS_SECRET_ACCESS_KEY")
     }
 stages{
-    stage("build"){
+    stage("CLUSTER BUILDING"){
         steps{
                  git "https://github.com/pranay1603/terraform-k8s.git"
                  sh "chmod 400 Nvirginiakey"
@@ -19,5 +19,10 @@ stages{
                  sh "terraform apply -auto-approve"
             }
         }
-    }
+    stage("pulling the admin.conf") {
+        steps {
+               git "https://github.com/pranay1603/k8s-confile.git"    
+            }
+     }
+  }             
 }
